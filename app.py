@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 
 # Load XGBoost model
 model = xgb.Booster()
-model.load_model("models/wine_quality_xgb.json")
+model.load_model("models/xgboost_model.json")
 
 # Features and defaults
 feature_names = [
