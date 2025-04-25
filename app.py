@@ -139,7 +139,6 @@ st.markdown("""
         border: none;
         padding: 12px 24px;
         border-radius: 10px;
-        width: 100%;
         margin: 25px auto 0;
         display: block;
         transition: all 0.3s ease;
