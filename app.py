@@ -140,9 +140,53 @@ button[kind="primary"]:hover {
 if "show_result" not in st.session_state:
     st.session_state["show_result"] = False
 
-def reset_to_defaults():
-    for feat in feature_names:
-        st.session_state[feat] = default_values[feat]
+with st.form("input_form"):
+    st.markdown('<div class="form-container">', unsafe_allow_html=True)
+
+    cols = st.columns(2)
+    for i, feat in enumerate(feature_names):
+        col = cols[i % 2]
+        with col:
+            st.markdown(f'<div class="input-label">{feat.title()}</div>', unsafe_allow_html=True)
+            st.markdown(f'<div class="input-description">{feature_explanations[feat]}</div>', unsafe_allow_html=True)
+            min_val, max_val, step = input_ranges[feat]
+            default = default_values[feat]
+            value = st.session_state.get(feat, default)
+            st.session_state[feat] = col.slider(
+                f"{feat}", min_value=float(min_val), max_value=float(max_val),
+                value=float(value), step=float(step), key=feat)
+
+    # ✅ Centered Buttons
+    st.markdown("""
+        <div style="text-align: center; margin-top: 20px;">
+            <button type="submit" style="
+                background-color: #800000;
+                color: white;
+                padding: 10px 25px;
+                border: none;
+                border-radius: 8px;
+                font-weight: bold;
+                font-size: 16px;
+                margin: 5px;
+                cursor: pointer;">
+                Predict Wine Quality
+            </button>
+            <button type="button" onclick="window.location.reload()" style="
+                background-color: #aaa;
+                color: white;
+                padding: 10px 20px;
+                border: none;
+                border-radius: 8px;
+                font-size: 14px;
+                margin: 5px;
+                cursor: pointer;">
+                Reset to Default
+            </button>
+        </div>
+    """, unsafe_allow_html=True)
+
+    st.markdown('</div>', unsafe_allow_html=True)
+
 
 # Main interface
 if not st.session_state["show_result"]:
