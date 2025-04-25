@@ -175,6 +175,37 @@ st.markdown("""
     .stButton>button:hover::after {
         left: 100%;
     }
+    /* Reset Defaults Button */
+.reset-defaults {
+    background: #f1f5f9;
+    color: #475569;
+    font-size: 0.9rem;
+    font-weight: 200;
+    border: 1px solid #cbd5e1;
+    padding: 16px 8px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-top: 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.reset-defaults:hover {
+    background: #e2e8f0;
+    color: #334155;
+    border-color: #94a3b8;
+    transform: translateY(-1px);
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.08);
+}
+
+.reset-defaults:active {
+    transform: translateY(0);
+}
+
     
     /* Reset Defaults Button */
     .reset-defaults {
