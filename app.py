@@ -181,9 +181,9 @@ st.markdown("""
         background: #f1f5f9;
         color: #475569;
         font-size: 0.9rem;
-        font-weight: 500;
+        font-weight: 200;
         border: 1px solid #cbd5e1;
-        padding: 8px 16px;
+        padding: 16px 8px;
         border-radius: 8px;
         cursor: pointer;
         transition: all 0.2s ease;
