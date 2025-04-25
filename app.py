@@ -139,7 +139,7 @@ st.markdown("""
         border: none;
         padding: 12px 24px;
         border-radius: 10px;
-        width:60%;
+        width:100%;
         margin: 25px auto 0;
         display: block;
         transition: all 0.3s ease;
@@ -184,7 +184,7 @@ st.markdown("""
         font-weight: 200;
         border: 1px solid #cbd5e1;
         padding: 16px 8px;
-        border-radius: 8px;
+        border-radius: 10px;
         cursor: pointer;
         transition: all 0.2s ease;
         margin-top: 10px;
